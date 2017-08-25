@@ -25,8 +25,8 @@
                 <td><input type="text" name="code" placeholder="请输入验证码"/><img src=""></td>
             </tr>
             <tr>
-                <td><input type="submit" value="登录" /></td>
                 <td><a href="#">注册</a><a href="#">忘记密码?</a></td>
+                <td><input type="submit" value="登录" /></td>
             </tr>
         </table>
     </div>

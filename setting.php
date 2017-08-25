@@ -63,13 +63,12 @@ class Conn{
 $Conn = Conn::get_instance();
 
 $httpPath = 'http://' . $_SERVER ['SERVER_NAME'] . '/';
-$rootPath = realpath(str_replace(substr($_SERVER['DOCUMENT_URI'],21),' ',$_SERVER['DOCUMENT_URI'])).'/';//当前项目根目录
+$rootPath = $_SERVER['DOCUMENT_ROOT'].'/birthday/';//当前项目根目录
 
 
 define('HTTP_PATH',$httpPath);
 define('DOCUMENT_ROOT',$rootPath);
-//echo "<pre>";
-//var_dump(DOCUMENT_ROOT);
+
 
 
 

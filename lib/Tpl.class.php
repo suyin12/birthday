@@ -24,7 +24,7 @@ class Tpl{
      * 模板赋值操作
      * @param mixed $tpl_var 如果是字符串,就作为数组索引,如果是数组,就循环赋值
      * @param mixed $tpl_value 当$tpl_var为string时的值,默认为null
-     *
+     * @return bool
      */
     function setConfigs(array $configs){
         if(count($configs)>0){
@@ -97,7 +97,8 @@ class Tpl{
      */
     function display($fileName){
         //模板路径
-        $tplFile = $this->template_dir.'/'.$fileName;
+
+        $tplFile = $_SERVER['DOCUMENT_ROOT'].'/birthday/'.$this->template_dir.'/'.$fileName;
 
         //判断模板是否存在
         if(!file_exists($tplFile)){
@@ -106,7 +107,7 @@ class Tpl{
             return false;
         }
         //编译后的文件
-        $comFile = $this->compile_dir.'/'.md5($fileName).'.php';
+        $comFile = $_SERVER['DOCUMENT_ROOT'].'/birthday/'.$this->compile_dir.'/'.md5($fileName).'.php';
         $this->fetch($tplFile,$comFile);
 
         include $comFile;
