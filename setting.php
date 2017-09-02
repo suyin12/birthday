@@ -64,8 +64,10 @@ $Conn = Conn::get_instance();
 
 $httpPath = 'http://' . $_SERVER ['SERVER_NAME'] . '/';
 $rootPath = $_SERVER['DOCUMENT_ROOT'].'/birthday/';//当前项目根目录
+$projectName = explode('/',$_SERVER['DOCUMENT_URI']);//项目名称
 
 
+define('PROJECT_NAME',$projectName[1]);
 define('HTTP_PATH',$httpPath);
 define('DOCUMENT_ROOT',$rootPath);
 

@@ -6,8 +6,10 @@
  *
  */
 
+include 'setting.php';
 require 'lib/Tpl.class.php';
 
 $tpl = new Tpl();
 
+$tpl->assign('projectName',PROJECT_NAME);
 $tpl->display('admin/login.html');

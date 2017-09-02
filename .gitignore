@@ -1,0 +1,14 @@
+*release_dev/
+*release_test/
+*node_modules/
+*runtime/
+*npm-debug.log
+.idea
+*Vagrantfile
+*.vagrant/
+nginx_conf/
+*.settings/
+*.buildpath/
+*.project/
+*.git/
+*compiles/

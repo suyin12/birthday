@@ -10,4 +10,5 @@ require DOCUMENT_ROOT .'lib/Tpl.class.php';
 
 $tpl = new Tpl();
 
+$tpl->assign('documentRoot',DOCUMENT_ROOT);
 $tpl->display('admin/register.html');

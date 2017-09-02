@@ -10,5 +10,5 @@ if (realpath ( __FILE__ ) == realpath ( $_SERVER ['SCRIPT_FILENAME'] )) {
     exit ( '禁止访问' );
 }
 if (empty($_SESSION['user'])||@$_SESSION['expire']<time()){
-    header('location:' . HTTP_PATH . 'jh-framwork/birthday/login.php' ); //@ redirect
+    header('location:' . HTTP_PATH .PROJECT_NAME. '/login.php' ); //@ redirect
 }
