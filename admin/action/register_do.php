@@ -10,9 +10,14 @@ require '../../lib/Tpl.class.php';
 
 session_start();
 $username =  $_POST['username'];
-$pwd = md5($_POST['pwd'].$username);
+$pwd = $_POST['pwd'];
+$pwd2 = $_POST['pwd2'];
+
 if(empty($username)||empty($pwd)){
-    die("用户名或密码不能为空");
+    die("用户名或密码不能为空!!");
+}
+if(strcmp($pwd,$pwd2) !== 0){
+    die("输入的两次密码不一致!!");
 }
 $time = time();
 $sql = "insert into admin_info(A_ID,A_UserName,A_Password,A_Tel,A_QQ,A_Email,A_Createtime,A_Status)values('','$username','$pwd',0,0,0,$time,0)";

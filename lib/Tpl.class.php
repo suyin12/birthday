@@ -35,6 +35,8 @@ class Tpl{
                 return true;
             }
             return false;
+        }else{
+            return true;
         }
     }
 
@@ -58,7 +60,6 @@ class Tpl{
      * 生成编译文件
      * @param string $tplFile 模板路径
      * @param string $comFile 编译路径
-     * @return string
      *
      */
     function fetch($tplFile,$comFile){
@@ -93,17 +94,15 @@ class Tpl{
     /**
      * 输出内容
      * @param string $fileName 模板文件名
-     *
+     * @return array
      */
     function display($fileName){
         //模板路径
-
         $tplFile = $_SERVER['DOCUMENT_ROOT'].'/birthday/'.$this->template_dir.'/'.$fileName;
         //判断模板是否存在
         if(!file_exists($tplFile)){
             $this->errorMessage = '模板文件不存在';
             die($this->errorMessage);
-            return false;
         }
         //编译后的文件
         $comFile = $_SERVER['DOCUMENT_ROOT'].'/birthday/'.$this->compile_dir.'/'.md5($fileName).'.php';

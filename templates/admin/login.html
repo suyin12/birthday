@@ -22,14 +22,16 @@
             </tr>
             <tr>
                 <td>验证码:</td>
-                <td><input type="text" name="code" placeholder="请输入验证码"/><img src=""></td>
-                <td><img id="captcha_img" border='1' src='./common/function.php?action=verificationCode&rand=2'
+                <td><input type="text" name="code" placeholder="请输入验证码"/></td>
+                <td><img id="captcha_img" border='1' src='./common/function.php?action=code&rand=2'
                               style="width:100px; height:30px" onclick="verificationCodeRefresh();"/>
                 </td>
             </tr>
             <tr>
-<!--                <td><a href="../birthday/admin/register.php">注册</a><a href="#">忘记密码?</a></td>-->
-                <td><input type="submit" value="登录" /></td>
+                <td></td>
+                <td><a href="../birthday/admin/register.php">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="登录" /></td>
+<!--                <td><a href="#">忘记密码?</a></td>-->
             </tr>
         </table>
     </div>
@@ -38,8 +40,9 @@
 <script>
     function verificationCodeRefresh(){
         var verificationCodeRefresh = document.getElementById('captcha_img');
-        var src = verificationCodeRefresh.getAttribute('src');
-        verificationCodeRefresh.setAttribute('src',src);
+        var rand = Math.random();
+        var newSrc = './common/function.php?action=code&rand='+rand;
+        verificationCodeRefresh.setAttribute('src',newSrc);
     }
 </script>
 </body>
