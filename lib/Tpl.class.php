@@ -99,6 +99,7 @@ class Tpl{
     function display($fileName){
         //模板路径
         $tplFile = $_SERVER['DOCUMENT_ROOT'].'/birthday/'.$this->template_dir.'/'.$fileName;
+//        var_dump($tplFile);exit;
         //判断模板是否存在
         if(!file_exists($tplFile)){
             $this->errorMessage = '模板文件不存在';

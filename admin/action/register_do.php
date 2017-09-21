@@ -19,6 +19,9 @@ if(empty($username)||empty($pwd)){
 if(strcmp($pwd,$pwd2) !== 0){
     die("输入的两次密码不一致!!");
 }
+
+$pwd = md5($pwd.$username);
+
 $time = time();
 $sql = "insert into admin_info(A_ID,A_UserName,A_Password,A_Tel,A_QQ,A_Email,A_Createtime,A_Status)values('','$username','$pwd',0,0,0,$time,0)";
 

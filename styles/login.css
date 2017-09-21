@@ -1,0 +1,209 @@
+// body{
+// 	background: #4caf8b;
+// }
+
+body {
+    padding:0;
+    margin:0;
+    overflow:hidden;
+	height: 600px;
+}
+canvas {
+    padding:0;
+    margin:0;
+}
+div.btnbg {
+    position:fixed;
+    left:0;
+    top:0;
+}
+/*最外层容器样式*/
+.wrap{
+	width: 650px;
+	height: 200px;
+	/*改变左右上下,图片方块移动*/
+	margin: 150px 300px;
+	position: absolute;	
+}
+/*包裹所有容器样式*/
+.cube{
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	transform-style: preserve-3d;
+	transform: rotateX(-30deg) rotateY(-80deg);
+	-webkit-animation: rotate 20s infinite;
+	/*匀速*/
+	animation-timing-function: linear;
+}
+@-webkit-keyframes rotate{
+	from{transform: rotateX(0deg) rotateY(0deg);}
+	to{transform: rotateX(360deg) rotateY(360deg);}
+}
+.cube div{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	opacity: 0.8;
+	transition: all .4s;
+}
+/*定义所有图片样式*/
+.pic{
+	width: 200px;
+	height: 200px;
+}
+.cube .out_front{
+	transform: rotateY(0deg) translateZ(100px);
+}
+.cube .out_back{
+	transform: translateZ(-100px) rotateY(180deg);
+}
+.cube .out_left{
+	transform: rotateY(90deg) translateZ(100px);
+}
+.cube .out_right{
+	transform: rotateY(-90deg) translateZ(100px);
+}
+.cube .out_top{
+	transform: rotateX(90deg) translateZ(100px);
+}
+.cube .out_bottom{
+	transform: rotateX(-90deg) translateZ(100px);
+}
+/*定义小正方体样式*/
+.cube span{
+	display: bloack;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+}
+.cube .in_pic{
+	width: 100px;
+	height: 100px;
+}
+.cube .in_front{
+	transform: rotateY(0deg) translateZ(50px);
+}
+.cube .in_back{
+	transform: translateZ(-50px) rotateY(180deg);
+}
+.cube .in_left{
+	transform: rotateY(90deg) translateZ(50px);
+}
+.cube .in_right{
+	transform: rotateY(-90deg) translateZ(50px);
+}
+.cube .in_top{
+	transform: rotateX(90deg) translateZ(50px);
+}
+.cube .in_bottom{
+	transform: rotateX(-90deg) translateZ(50px);
+}
+/*鼠标移入后样式*/
+.cube:hover .out_front{
+	transform: rotateY(0deg) translateZ(200px);
+}
+.cube:hover .out_back{
+	transform: translateZ(-200px) rotateY(180deg);
+}
+.cube:hover .out_left{
+	transform: rotateY(90deg) translateZ(200px);
+}
+.cube:hover .out_right{
+	transform: rotateY(-90deg) translateZ(200px);
+}
+.cube:hover .out_top{
+	transform: rotateX(90deg) translateZ(200px);
+}
+.cube:hover .out_bottom{
+	transform: rotateX(-90deg) translateZ(200px);
+}
+.formStyle{
+	width: 500px;
+    height: 500px;
+    position: absolute;
+    background: #00BCD4;
+    left: 47%;
+    top: 30%;
+    border-radius: 14px;
+    box-shadow: 10px 11px 18px #ffffff;
+}
+.inbox{
+	position: absolute;
+    font-size: 23px;
+    font-family: KaiTi;
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+}
+.inbox .styles{
+	width: 280px;
+    height: 30px;
+    width: 280px;
+    height: 30px;
+    background: #00BCD4;
+    border: none;
+    border-bottom: 1px solid #f1f1f1;
+    outline: none;
+}
+.userBox{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+.wordBox{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+.pass{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+.forget{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+.lg{
+	width: 80px !important;
+	margin-left: 60px;
+	background: #20A0FF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.zhuce{
+	margin-left: 50px;
+	width: 80px;
+    background: #20A0FF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#outbox{
+	width: 300px;
+	height: 300px;
+	border: 1px solid red;
+	border-radius: 50%;
+	background: conic-gradient(#000 12.5%, #fff 0 37.5%, #000 0 62.5%, #fff 0 87.5%, #000 0);
+}
+#cvs{
+	margin-left: 200px;
+}
+#canvasbox{
+	position: absolute;
+	right: 0;
+}
