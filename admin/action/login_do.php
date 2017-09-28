@@ -7,8 +7,12 @@
  */
 require '../../setting.php';
 require '../../lib/Tpl.class.php';
+require '../../common/common.php';
 
 session_start();
+$msgTitle = '登录';
+$jumpUrl = HTTP_PATH.PROJECT_NAME.'/login.php';
+
 $username =  $_POST['username'];
 $pwd = md5($_POST['pwd'].$username);
 $code = trim(strtolower($_POST['code']));
@@ -20,9 +24,9 @@ $sql = "select A_ID,A_UserName from admin_info where `A_UserName`=  '".$username
 $ret = $Conn::$pdo->query($sql);
 $res = $ret->fetchAll(PDO::FETCH_ASSOC);
 if(strcmp($sessionCode,$code) !== 0){
-    die('验证码输入错误!');
+    message($msgTitle,'验证码输入错误!',$jumpUrl);
 }elseif(empty($res)){
-    die('用户名或密码不正确!');
+    message($msgTitle,'用户名或密码不正确!',$jumpUrl);
 }
 if($res[0]){
     $_SESSION['user'] = $username;
